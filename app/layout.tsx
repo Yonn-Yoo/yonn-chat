@@ -1,4 +1,3 @@
-import Header from '@/components/core/header';
 import ThemeProvider from '@/components/providers/theme-provider';
 import { cn } from '@/lib/utils';
 import { ClerkProvider } from '@clerk/nextjs';
@@ -28,7 +27,6 @@ export default function RootLayout({
             enableSystem={false}
             storageKey="yonnchat-theme"
           >
-            <Header />
             {children}
           </ThemeProvider>
         </body>
