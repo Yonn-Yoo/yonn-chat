@@ -30,8 +30,8 @@ export default function ServerHeader({ server, role }: Props) {
   const isAdmin = role === MemberRole.ADMIN;
   const isModerator = isAdmin || role === MemberRole.MODERATOR;
 
-  const openInviteModal = () => {
-    onOpen('invite', { server });
+  const openModal = (type: 'invite' | 'editServer' | 'createServer') => {
+    onOpen(type, { server });
   };
 
   return (
@@ -46,7 +46,7 @@ export default function ServerHeader({ server, role }: Props) {
         {isModerator && (
           <>
             <DropdownMenuItem
-              onClick={openInviteModal}
+              onClick={() => openModal('invite')}
               className="text-indigo-600 dark:text-indigo-400 px-3 py-2 text-sm cursor-pointer"
             >
               Invite Members
@@ -59,7 +59,10 @@ export default function ServerHeader({ server, role }: Props) {
           </>
         )}
         {isAdmin && (
-          <DropdownMenuItem className="px-3 py-2 text-sm cursor-pointer">
+          <DropdownMenuItem
+            onClick={() => openModal('editServer')}
+            className="px-3 py-2 text-sm cursor-pointer"
+          >
             Server Settings
             <Settings className="w-5 h-5 ml-auto" />
           </DropdownMenuItem>
