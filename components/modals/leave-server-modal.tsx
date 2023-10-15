@@ -18,14 +18,14 @@ export default function LeaveServerModal() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  const { onOpen, isOpen, onClose, type, data } = useModal();
+  const { isOpen, onClose, type, data } = useModal();
   const { server } = data;
   const isModalOpen = isOpen && type === 'leaveServer';
 
   const leaveServer = async () => {
     setLoading(true);
     await axios
-      .patch(`api/severs/${server?.id}/leave`)
+      .patch(`/api/servers/${server?.id}/leave`)
       .then(handleSuccess)
       .catch(console.log)
       .finally(() => setLoading(false));
@@ -63,7 +63,7 @@ export default function LeaveServerModal() {
               Cancel
             </Button>
             <Button onClick={leaveServer} variant="primary" disabled={loading}>
-              Confirm
+              {loading ? 'Leaving Server...' : 'Confirm'}
             </Button>
           </div>
         </DialogFooter>
