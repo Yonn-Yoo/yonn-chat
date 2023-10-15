@@ -8,6 +8,22 @@ body,
   height: 100%;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #949494;
+  border-radius: 40px;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
