@@ -52,7 +52,10 @@ export default function ServerHeader({ server, role }: Props) {
               Invite Members
               <UserPlus className="w-5 h-5 ml-auto" />
             </DropdownMenuItem>
-            <DropdownMenuItem className="px-3 py-2 text-sm cursor-pointer">
+            <DropdownMenuItem
+              onClick={() => openModal('createChannel')}
+              className="px-3 py-2 text-sm cursor-pointer"
+            >
               Create Channel
               <PlusCircle className="w-5 h-5 ml-auto" />
             </DropdownMenuItem>
