@@ -34,7 +34,7 @@ export default async function ServerIdLayout({ children, params }: Props) {
 
   return (
     <div className="h-full">
-      <div className="hidden md:flex flex-col fixed inset-y-0 h-full w-60 z-20">
+      <div className="hidden md:flex flex-col fixed inset-y-0 h-full w-60 z-10">
         <ServerSidebar serverId={params.serverId} />
       </div>
       <section className="h-full md:pl-60">{children}</section>
