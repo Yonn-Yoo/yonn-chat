@@ -1,6 +1,6 @@
 'use client';
 
-import { useModal } from '@/hooks/use-modal-store';
+import { ModalType, useModal } from '@/hooks/use-modal-store';
 import { ServerWithMembersWithProfiles } from '@/types';
 import { MemberRole } from '@prisma/client';
 import {
@@ -30,7 +30,7 @@ export default function ServerHeader({ server, role }: Props) {
   const isAdmin = role === MemberRole.ADMIN;
   const isModerator = isAdmin || role === MemberRole.MODERATOR;
 
-  const openModal = (type: 'invite' | 'editServer' | 'createServer') => {
+  const openModal = (type: ModalType) => {
     onOpen(type, { server });
   };
 
@@ -68,7 +68,10 @@ export default function ServerHeader({ server, role }: Props) {
           </DropdownMenuItem>
         )}
         {isAdmin && (
-          <DropdownMenuItem className="px-3 py-2 text-sm cursor-pointer">
+          <DropdownMenuItem
+            onClick={() => openModal('members')}
+            className="px-3 py-2 text-sm cursor-pointer"
+          >
             Manage Members
             <Users className="w-5 h-5 ml-auto" />
           </DropdownMenuItem>
