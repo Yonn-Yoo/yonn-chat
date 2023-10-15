@@ -14,18 +14,18 @@ import {
   DialogTitle,
 } from '../ui/dialog';
 
-export default function LeaveServerModal() {
+export default function DeleteServerModal() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const { isOpen, onClose, type, data } = useModal();
   const { server } = data;
-  const isModalOpen = isOpen && type === 'leaveServer';
+  const isModalOpen = isOpen && type === 'deleteServer';
 
   const leaveServer = async () => {
     setLoading(true);
     await axios
-      .patch(`/api/servers/${server?.id}/leave`)
+      .delete(`/api/servers/${server?.id}`)
       .then(handleSuccess)
       .catch(console.log)
       .finally(() => setLoading(false));
@@ -42,10 +42,10 @@ export default function LeaveServerModal() {
       <DialogContent className="bg-[#F8F9FA] text-black overflow-hidden p-0">
         <DialogHeader className="pt-6 px-5">
           <DialogTitle className="text-2xl text-center font-semibold">
-            Leaver Server
+            Delete Server
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
-            Are you sure you want to leave{' '}
+            Are you sure you want to delete{' '}
             <span className="font-semibold text-indigo-500">
               {server?.name}
             </span>
@@ -62,7 +62,7 @@ export default function LeaveServerModal() {
               Cancel
             </Button>
             <Button onClick={leaveServer} variant="primary" disabled={loading}>
-              {loading ? 'Leaving...' : 'Confirm'}
+              {loading ? 'Deleting...' : 'Confirm'}
             </Button>
           </div>
         </DialogFooter>
