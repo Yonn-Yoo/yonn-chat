@@ -14,6 +14,7 @@ import {
   User,
 } from 'lucide-react';
 import Image from 'next/image';
+import { useParams, useRouter } from 'next/navigation';
 import qs from 'query-string';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -63,6 +64,8 @@ export default function ChatItem({
 }: Props) {
   const [isEditing, setIsEditing] = useState(false);
   const { onOpen } = useModal();
+  const params = useParams();
+  const router = useRouter();
   const fileType = fileUrl?.split('.').pop();
   const isAdmin = currentMember.role === MemberRole.ADMIN;
   const isModerator = currentMember.role === MemberRole.MODERATOR;
@@ -96,6 +99,13 @@ export default function ChatItem({
     return () => window.removeEventListener('keydown', handleKeyDown);
   });
 
+  const handleOnMemberClick = () => {
+    if (member.id === currentMember.id) {
+      return;
+    }
+    router.push(`/servers/${params?.serverId}/conversations/${member.id}`);
+  };
+
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     const url = qs.stringifyUrl({
       url: `${socketUrl}/${id}`,
@@ -113,13 +123,19 @@ export default function ChatItem({
   return (
     <div className="relative group flex items-center hover:bg-black/5 p-4 transition w-full">
       <div className="group flex gap-x-2 items-start w-full">
-        <div className="cursor-pointer hover:drop-shadow-md transition">
+        <div
+          onClick={handleOnMemberClick}
+          className="cursor-pointer hover:drop-shadow-md transition"
+        >
           <UserAvatar src={member.profile.imageUrl} />
         </div>
         <div className="flex flex-col w-full">
           <div className="flex items-center gap-x-2">
             <div className="flex items-center">
-              <span className="font-semibold text-sm hover:underline cursor-pointer">
+              <span
+                onClick={handleOnMemberClick}
+                className="font-semibold text-sm hover:underline cursor-pointer"
+              >
                 {member.profile.name}
               </span>
               <ActionTooltip label={member.role}>
