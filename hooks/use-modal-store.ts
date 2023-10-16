@@ -14,19 +14,19 @@ export type ModalType =
   | 'messageFile'
   | 'deleteMessage';
 
-type ModalData = {
+type ModalDataType = {
   server?: Server;
   channel?: Channel;
   channelType?: ChannelType;
   apiUrl?: string;
-  query: Record<string, any>;
+  query?: Record<string, any>;
 };
 
 type ModalStoreType = {
   type: ModalType | null;
-  data: ModalData;
+  data: ModalDataType;
   isOpen: boolean;
-  onOpen: (type: ModalType, data?: ModalData) => void;
+  onOpen: (type: ModalType, data?: ModalDataType) => void;
   onClose: () => void;
 };
 
