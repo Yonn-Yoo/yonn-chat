@@ -12,10 +12,10 @@ export default function SocketIndicator() {
       variant="outline"
       className={cn(
         'text-white border-none',
-        connected ? 'bg-green-600' : 'bg-yellow-600'
+        connected ? 'bg-green-600' : 'bg-yellow-600 animate-pulse'
       )}
     >
-      {connected ? 'Live: Real-time updates' : 'Fallback:Polling every 1s'}
+      {connected ? 'Live' : 'Fallback:Polling every 1s'}
     </Badge>
   );
 }
