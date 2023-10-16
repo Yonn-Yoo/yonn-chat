@@ -33,7 +33,7 @@ export default function ServerSearch({ data }: Props) {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.key === 'k' && e.metaKey) || e.ctrlKey) {
+      if ((e.key === 'k' && e.metaKey) || (e.key === 'k' && e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
       }

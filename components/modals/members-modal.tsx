@@ -54,7 +54,7 @@ export default function MembersModal() {
 
   const displayMemberLength = () => {
     const memberLength = server?.members?.length;
-    return memberLength > 1 ? `${memberLength} members` : '1 memeber';
+    return memberLength > 1 ? `${memberLength} members` : '1 member';
   };
 
   const handleOnKick = async (memberId: string) => {
