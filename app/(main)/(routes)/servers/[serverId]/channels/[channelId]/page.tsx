@@ -73,10 +73,10 @@ export default async function ChannelIdPage({ params }: Props) {
         </>
       )}
       {channel.type === ChannelType.AUDIO && (
-        <MediaRoom chatId={channel.id} video={false} audio />
+        <MediaRoom chatId={channel.id} video={false} audio={true} />
       )}
       {channel.type === ChannelType.VIDEO && (
-        <MediaRoom chatId={channel.id} video audio={false} />
+        <MediaRoom chatId={channel.id} video={true} audio={true} />
       )}
     </div>
   );
