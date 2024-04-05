@@ -26,13 +26,13 @@ type ModalStoreType = {
   type: ModalType | null;
   data: ModalData;
   isOpen: boolean;
-  onOpen: (type: ModalType, data?: ModalData) => void;
+  onOpen: (type: ModalType | any, data?: ModalData | any) => void;
   onClose: () => void;
 };
 
 export const useModal = create<ModalStoreType>((set) => ({
   type: null,
-  data: {},
+  data: { query: {} },
   isOpen: false,
   onOpen: (type, data = {}) => set({ isOpen: true, type, data }),
   onClose: () => set({ type: null, isOpen: false }),

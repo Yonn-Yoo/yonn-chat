@@ -34,7 +34,7 @@ export default function InviteModal() {
     setLoading(true);
     axios
       .patch(`/api/servers/${server?.id}/invite-code`)
-      .then(({ data }) => onOpen('invite', { server: data }))
+      .then(({ data }) => onOpen('invite', { query: {}, server: data }))
       .catch(console.log)
       .finally(() => setLoading(false));
   };

@@ -1,7 +1,6 @@
 'use client';
 
 import { useModal } from '@/hooks/use-modal-store';
-import { ServerWithMembersWithProfiles } from '@/types';
 import { MemberRole } from '@prisma/client';
 import axios from 'axios';
 import {
@@ -38,7 +37,7 @@ import {
 import { ScrollArea } from '../ui/scroll-area';
 import UserAvatar from '../user-avatar';
 
-const roleIconMap = {
+const roleIconMap: any = {
   GUEST: <User className="w-4 h-4 text-zinc-500" />,
   MODERATOR: <ShieldCheck className="w-4 h-4 text-indigo-500" />,
   ADMIN: <ShieldAlert className="w-4 h-4 text-rose-400" />,
@@ -49,7 +48,7 @@ export default function MembersModal() {
   const [loadingId, setLoadingId] = useState('');
   const router = useRouter();
 
-  const { server } = data as { server: ServerWithMembersWithProfiles };
+  const { server } = data as any;
   const isModalOpen = isOpen && type === 'members';
 
   const displayMemberLength = () => {
@@ -109,7 +108,7 @@ export default function MembersModal() {
           </DialogDescription>
         </DialogHeader>
         <ScrollArea className="mt-8 max-h-[420px] pr-6">
-          {server?.members?.map(({ id, role, profile, profileId }) => (
+          {server?.members?.map(({ id, role, profile, profileId }: any) => (
             <div key={id} className="flex items-center gap-x-2 mb-6">
               <UserAvatar src={profile.imageUrl} />
               <div className="flex flex-col gap-y-1">
