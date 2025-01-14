@@ -225,7 +225,7 @@ export default function ChatItem({
         </div>
       </div>
       {canDeleteMessage && (
-        <div className="hidden group-hover:flex items-center absolute p-1 -top-2 right-5 bg-white dark:bg-zinc-800 border rounded-sm">
+        <div className="hidden group-hover:flex items-center space-x-4 absolute p-1 -top-2 right-5 border rounded-sm">
           {canEditMessage && (
             <ActionTooltip label="수정">
               <Edit
