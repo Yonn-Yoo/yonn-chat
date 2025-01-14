@@ -185,7 +185,7 @@ export default function ChatItem({
               {content}
               {isUpdated && !deleted && (
                 <span className="text-xs mx-2 text-zinc-500 dark:text-zinc-400">
-                  (edited)
+                  (수정됨)
                 </span>
               )}
             </p>
@@ -214,11 +214,11 @@ export default function ChatItem({
                   )}
                 />
                 <Button disabled={isLoading} size="sm" variant="primary">
-                  Save
+                  저장
                 </Button>
               </form>
               <span className="text-xs mt-1 text-zinc-400">
-                Press esc to cancel, enter to save
+                esc를 눌러 취소하고, enter를 눌러 저장해주세요.
               </span>
             </Form>
           )}
@@ -227,14 +227,14 @@ export default function ChatItem({
       {canDeleteMessage && (
         <div className="hidden group-hover:flex items-center absolute p-1 -top-2 right-5 bg-white dark:bg-zinc-800 border rounded-sm">
           {canEditMessage && (
-            <ActionTooltip label="Edit">
+            <ActionTooltip label="수정">
               <Edit
                 onClick={() => setIsEditing(true)}
                 className="w-5 h-5 cursor-pointer ml-auto text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300 transition"
               />
             </ActionTooltip>
           )}
-          <ActionTooltip label="Delete">
+          <ActionTooltip label="삭제">
             <Trash
               onClick={() =>
                 onOpen('deleteMessage', {

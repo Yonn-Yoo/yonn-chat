@@ -72,10 +72,10 @@ export default function MessageFileModal() {
       <DialogContent className="bg-[#F8F9FA] text-black overflow-hidden p-0">
         <DialogHeader className="pt-6 px-5">
           <DialogTitle className="text-2xl text-center font-semibold">
-            Add an attachment!
+            파일을 첨부해주세요!
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
-            Send any file as message!
+            아무 파일을 메시지로 보내주세요!
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -104,7 +104,7 @@ export default function MessageFileModal() {
             </div>
             <DialogFooter className="bg-gray-100 px-6 py-4">
               <Button variant="primary" disabled={isLoading} className="w-full">
-                Send
+                보내기
               </Button>
             </DialogFooter>
           </form>

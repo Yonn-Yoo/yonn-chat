@@ -41,11 +41,11 @@ export default function DeleteMessageModal() {
       <DialogContent className="bg-[#F8F9FA] text-black overflow-hidden p-0">
         <DialogHeader className="pt-6 px-5">
           <DialogTitle className="text-2xl text-center font-semibold">
-            Delete Message
+            메시지 삭제
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
-            Are you sure you want to do this? <br />
-            The message will be deleted permanently.
+            정말로 삭제하시겠습니까? <br />
+            삭제된 메시지는 복구할 수 없습니다.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="bg-gray-100 px-6 py-4">
@@ -55,10 +55,10 @@ export default function DeleteMessageModal() {
               onClick={onClose}
               disabled={loading}
             >
-              Cancel
+              취소
             </Button>
             <Button onClick={deleteServer} variant="primary" disabled={loading}>
-              {loading ? 'Deleting...' : 'Confirm'}
+              {loading ? '삭제중...' : '삭제'}
             </Button>
           </div>
         </DialogFooter>

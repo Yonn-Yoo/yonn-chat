@@ -103,7 +103,7 @@ export default async function handler(
         },
         data: {
           fileUrl: null,
-          content: 'This message has been deleted.',
+          content: '삭제된 메시지입니다.',
           deleted: true,
         },
         include: {

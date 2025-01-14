@@ -38,10 +38,10 @@ const formSchema = z.object({
   name: z
     .string()
     .min(1, {
-      message: 'Channel name is required.',
+      message: '채널 이름을 입력해주세요.',
     })
     .refine((name) => name !== 'general', {
-      message: 'Channel name cannot be "general" 🥲',
+      message: '채널 이름은 "general"이 될 수 없습니다. 🥲',
     }),
   type: z.nativeEnum(ChannelType),
 });
@@ -98,7 +98,7 @@ export default function CreateChannelModal() {
       <DialogContent className="bg-[#F8F9FA] text-black overflow-hidden p-0">
         <DialogHeader className="pt-6 px-5">
           <DialogTitle className="text-2xl text-center font-semibold">
-            Create channel
+            채널 생성
           </DialogTitle>
         </DialogHeader>
         <Form {...form}>
@@ -113,13 +113,13 @@ export default function CreateChannelModal() {
                 render={({ field }) => (
                   <FormItem className="!relative">
                     <FormLabel className="text-xs font-bold text-zinc-500 dark:text-secondary/70">
-                      Channel name
+                      채널 이름
                     </FormLabel>
                     <FormControl>
                       <Input
                         disabled={isLoading}
                         className="bg-zinc-300/60 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                        placeholder="Enter channel name"
+                        placeholder="채널 이름을 입력해주세요."
                         {...field}
                       />
                     </FormControl>
@@ -132,7 +132,7 @@ export default function CreateChannelModal() {
                 name="type"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Channel Type</FormLabel>
+                    <FormLabel>채널 타입</FormLabel>
                     <Select
                       disabled={isLoading}
                       onValueChange={field.onChange}
@@ -165,7 +165,7 @@ export default function CreateChannelModal() {
             </div>
             <DialogFooter className="bg-gray-100 px-6 py-4">
               <Button variant="primary" disabled={isLoading}>
-                Create!
+                생성하기!
               </Button>
             </DialogFooter>
           </form>

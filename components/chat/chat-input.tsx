@@ -70,9 +70,9 @@ export default function ChatInput({ apiUrl, query, name, type }: Props) {
                     spellCheck={false}
                     disabled={loading}
                     className="px-14 py-6 bg-zinc-200/90 dark:bg-zinc-700/75 border-none border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-zinc-600 dark:text-zinc-200"
-                    placeholder={`Send message to ${
+                    placeholder={`${
                       type === 'conversation' ? name : `#${name}`
-                    }`}
+                    }에 메시지를 보내주세요.`}
                     {...field}
                   />
                   <div className="absolute top-7 right-8">

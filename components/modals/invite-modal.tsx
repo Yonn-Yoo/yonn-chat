@@ -44,12 +44,12 @@ export default function InviteModal() {
       <DialogContent className="bg-[#F8F9FA] text-black overflow-hidden p-0">
         <DialogHeader className="pt-6 px-5">
           <DialogTitle className="text-2xl text-center font-semibold">
-            Invite Members
+            멤버 초대
           </DialogTitle>
         </DialogHeader>
         <div className="p-6">
           <Label className="uppercase text-xs md:text-sm font-bold text-zinc-500 dark:text-secondary/80">
-            Server invite link
+            멤버 초대 링크
           </Label>
           <div className="flex items-center mt-3 space-x-2">
             <Input
@@ -77,7 +77,7 @@ export default function InviteModal() {
             variant="link"
             className="flex items-center text-zinc-600 font-medium mt-2 p-0 group"
           >
-            {loading ? 'Generating new link...' : 'Generate new link'}
+            {loading ? '새 링크 생성중...' : '새 링크 생성하기'}
             <RefreshCcw
               className={`w-3.5 h-3.5 ml-2 group-hover:rotate-90 duration-200 ease-out ${
                 loading && 'animate-spin'

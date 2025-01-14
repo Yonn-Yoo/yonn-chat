@@ -83,11 +83,11 @@ export default function EditServerModal() {
       <DialogContent className="bg-[#F8F9FA] text-black overflow-hidden p-0">
         <DialogHeader className="pt-6 px-5">
           <DialogTitle className="text-2xl text-center font-semibold">
-            Edit your server!
+            서버를 수정해주세요!
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
-            Give your server a personality with a name and an icon. You can
-            always change it later!
+            서버의 이름과 보여질 아이콘을 지정해주세요. 언제든 수정이
+            가능합니다!
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -120,13 +120,13 @@ export default function EditServerModal() {
                 render={({ field }) => (
                   <FormItem className="!relative">
                     <FormLabel className="text-xs font-bold text-zinc-500 dark:text-secondary/70">
-                      Server name
+                      서버 이름
                     </FormLabel>
                     <FormControl>
                       <Input
                         disabled={isLoading}
                         className="bg-zinc-300/60 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                        placeholder="Enter server name"
+                        placeholder="서버 이름을 입력해주세요."
                         {...field}
                       />
                     </FormControl>
@@ -137,7 +137,7 @@ export default function EditServerModal() {
             </div>
             <DialogFooter className="bg-gray-100 px-6 py-4">
               <Button variant="primary" disabled={isLoading}>
-                Save!
+                저장하기!
               </Button>
             </DialogFooter>
           </form>

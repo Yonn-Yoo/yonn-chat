@@ -49,14 +49,14 @@ export default function DeleteChannelModal() {
       <DialogContent className="bg-[#F8F9FA] text-black overflow-hidden p-0">
         <DialogHeader className="pt-6 px-5">
           <DialogTitle className="text-2xl text-center font-semibold">
-            Delete Channel
+            채널 삭제
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
-            Are you sure you want to do this? <br />
+            정말로 삭제하시겠습니까? <br />
             <span className="font-semibold text-indigo-500">
               {`"${channel?.name}"`}{' '}
             </span>
-            channel will be permanently deleted.
+            채널은 영구적으로 삭제됩니다.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="bg-gray-100 px-6 py-4">
@@ -66,10 +66,10 @@ export default function DeleteChannelModal() {
               onClick={onClose}
               disabled={loading}
             >
-              Cancel
+              취소
             </Button>
             <Button onClick={deleteServer} variant="primary" disabled={loading}>
-              {loading ? 'Deleting...' : 'Confirm'}
+              {loading ? '삭제중...' : '삭제'}
             </Button>
           </div>
         </DialogFooter>

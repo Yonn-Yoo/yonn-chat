@@ -49,14 +49,14 @@ export default function ServerHeader({ server, role }: Props) {
               onClick={() => openModal('invite')}
               className="text-indigo-600 dark:text-indigo-400 px-3 py-2 text-sm cursor-pointer"
             >
-              Invite Members
+              멤버 초대
               <UserPlus className="w-5 h-5 ml-auto" />
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => openModal('createChannel')}
               className="px-3 py-2 text-sm cursor-pointer"
             >
-              Create Channel
+              채널 생성
               <PlusCircle className="w-5 h-5 ml-auto" />
             </DropdownMenuItem>
           </>
@@ -66,7 +66,7 @@ export default function ServerHeader({ server, role }: Props) {
             onClick={() => openModal('editServer')}
             className="px-3 py-2 text-sm cursor-pointer"
           >
-            Server Settings
+            서버 세팅
             <Settings className="w-5 h-5 ml-auto" />
           </DropdownMenuItem>
         )}
@@ -75,7 +75,7 @@ export default function ServerHeader({ server, role }: Props) {
             onClick={() => openModal('members')}
             className="px-3 py-2 text-sm cursor-pointer"
           >
-            Manage Members
+            멤버 관리
             <Users className="w-5 h-5 ml-auto" />
           </DropdownMenuItem>
         )}
@@ -85,7 +85,7 @@ export default function ServerHeader({ server, role }: Props) {
             onClick={() => openModal('deleteServer')}
             className="text-rose-500 px-3 py-2 text-sm cursor-pointer"
           >
-            Delete Server
+            서버 삭제
             <Trash className="w-5 h-5 ml-auto" />
           </DropdownMenuItem>
         )}
@@ -94,7 +94,7 @@ export default function ServerHeader({ server, role }: Props) {
             onClick={() => openModal('leaveServer')}
             className="text-rose-500 px-3 py-2 text-sm cursor-pointer"
           >
-            Leave Server
+            서버 나가기
             <LogOut className="w-5 h-5 ml-auto" />
           </DropdownMenuItem>
         )}

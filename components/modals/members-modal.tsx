@@ -102,7 +102,7 @@ export default function MembersModal() {
       <DialogContent className="bg-[#F8F9FA] text-black overflow-hidden">
         <DialogHeader className="pt-6 px-5">
           <DialogTitle className="text-2xl text-center font-semibold">
-            Manage Members
+            멤버 관리
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
             {displayMemberLength()}
@@ -129,7 +129,7 @@ export default function MembersModal() {
                       <DropdownMenuSub>
                         <DropdownMenuSubTrigger className="flex items-center">
                           <ShieldQuestion className="w-4 h-4 mr-2" />
-                          <span>Role</span>
+                          <span>권한</span>
                         </DropdownMenuSubTrigger>
                         <DropdownMenuPortal>
                           <DropdownMenuSubContent className="w-36">
@@ -162,7 +162,7 @@ export default function MembersModal() {
                         className="text-rose-400"
                       >
                         <AlertCircle className="w-4 h-4 mr-2" />
-                        Kick
+                        추방하기
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>

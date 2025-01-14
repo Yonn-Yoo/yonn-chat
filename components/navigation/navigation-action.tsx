@@ -13,7 +13,7 @@ export default function NavigationAction() {
 
   return (
     <div>
-      <ActionTooltip side="right" align="center" label="Add new server">
+      <ActionTooltip side="right" align="center" label="서버 추가">
         <button onClick={openModal} className="group flex items-center">
           <div className="flex items-center justify-center bg-background dark:bg-neutral-700 group-hover:bg-emerald-500 h-12 w-12 rounded-3xl group-hover:rounded-2xl transition-all overflow-hidden">
             <Plus
