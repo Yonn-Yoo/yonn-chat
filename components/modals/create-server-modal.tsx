@@ -28,10 +28,10 @@ import { Input } from '../ui/input';
 
 const formSchema = z.object({
   name: z.string().min(1, {
-    message: 'Server name is required.',
+    message: '서버 이름을 입력해주세요.',
   }),
   imageUrl: z.string().min(1, {
-    message: 'Server image is required',
+    message: '서버 이미지를 등록해주세요.',
   }),
 });
 
